@@ -737,6 +737,8 @@ public final class BuiltinMacros {
     public static let GENERATE_EMBED_IN_CODE_ACCESSORS = BuiltinMacros.declareBooleanMacro("GENERATE_EMBED_IN_CODE_ACCESSORS")
     public static let GENERATE_INFOPLIST_FILE = BuiltinMacros.declareBooleanMacro("GENERATE_INFOPLIST_FILE")
     public static let GENERATE_KERNEL_MODULE_INFO_FILE = BuiltinMacros.declareBooleanMacro("GENERATE_KERNEL_MODULE_INFO_FILE")
+    public static let GENERATE_PLAYGROUND_ENTRY_POINT = BuiltinMacros.declareBooleanMacro("GENERATE_PLAYGROUND_ENTRY_POINT")
+    public static let GENERATED_PLAYGROUND_ENTRY_POINT_PATH = BuiltinMacros.declarePathMacro("GENERATED_PLAYGROUND_ENTRY_POINT_PATH")
     public static let GENERATE_PRELINK_OBJECT_FILE = BuiltinMacros.declareBooleanMacro("GENERATE_PRELINK_OBJECT_FILE")
     public static let GENERATE_PKGINFO_FILE = BuiltinMacros.declareBooleanMacro("GENERATE_PKGINFO_FILE")
     public static let GENERATE_RESOURCE_ACCESSORS = BuiltinMacros.declareBooleanMacro("GENERATE_RESOURCE_ACCESSORS")
@@ -1835,6 +1837,8 @@ public final class BuiltinMacros {
         GENERATE_EMBED_IN_CODE_ACCESSORS,
         GENERATE_INFOPLIST_FILE,
         GENERATE_KERNEL_MODULE_INFO_FILE,
+        GENERATE_PLAYGROUND_ENTRY_POINT,
+        GENERATED_PLAYGROUND_ENTRY_POINT_PATH,
         GENERATE_PRELINK_OBJECT_FILE,
         GENERATE_PKGINFO_FILE,
         GENERATE_RESOURCE_ACCESSORS,

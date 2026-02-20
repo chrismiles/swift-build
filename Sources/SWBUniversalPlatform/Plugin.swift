@@ -34,6 +34,7 @@ struct UniversalPlatformSpecsExtension: SpecificationsExtension {
             LexCompilerSpec.self,
             YaccCompilerSpec.self,
             TestEntryPointGenerationToolSpec.self,
+            PlaygroundEntryPointGenerationToolSpec.self,
         ]
     }
 
@@ -68,8 +69,18 @@ struct UniversalPlatformTaskProducerExtension: TaskProducerExtension {
         }
     }
 
+    struct PlaygroundEntryPointTaskProducerFactory: TaskProducerFactory {
+        var name: String {
+            "PlaygroundEntryPointTaskProducerFactory"
+        }
+
+        func createTaskProducer(_ context: SWBTaskConstruction.TargetTaskProducerContext, startPhaseNodes: [SWBCore.PlannedVirtualNode], endPhaseNode: SWBCore.PlannedVirtualNode) -> any SWBTaskConstruction.TaskProducer {
+            PlaygroundEntryPointTaskProducer(context, phaseStartNodes: startPhaseNodes, phaseEndNode: endPhaseNode)
+        }
+    }
+
     var setupTaskProducers: [any SWBTaskConstruction.TaskProducerFactory] {
-        [TestEntryPointTaskProducerFactory()]
+        [TestEntryPointTaskProducerFactory(), PlaygroundEntryPointTaskProducerFactory()]
     }
 
     var unorderedPostSetupTaskProducers: [any SWBTaskConstruction.TaskProducerFactory] { [] }
@@ -84,6 +95,6 @@ struct UniversalPlatformTaskProducerExtension: TaskProducerExtension {
 
 struct UniversalPlatformTaskActionExtension: TaskActionExtension {
     var taskActionImplementations: [SWBUtil.SerializableTypeCode : any SWBUtil.PolymorphicSerializable.Type] {
-        [44: TestEntryPointGenerationTaskAction.self]
+        [44: TestEntryPointGenerationTaskAction.self, 9999: PlaygroundEntryPointGenerationTaskAction.self]
     }
 }

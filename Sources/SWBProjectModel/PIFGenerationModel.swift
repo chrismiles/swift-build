@@ -297,6 +297,7 @@ public enum PIF {
             case hostBuildTool = "com.apple.product-type.tool.host-build"
             case unitTest = "com.apple.product-type.bundle.unit-test"
             case swiftpmTestRunner = "com.apple.product-type.tool.swiftpm-test-runner"
+            case swiftpmPlaygroundRunner = "com.apple.product-type.tool.swiftpm-playground-runner"
             case bundle = "com.apple.product-type.bundle"
             case packageProduct = "packageProduct"
             public var asString: String { return rawValue }

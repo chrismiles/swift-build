@@ -926,6 +926,10 @@ package final class SourcesTaskProducer: FilesBasedBuildPhaseTaskProducerBase, F
                         result.append((scope.evaluate(BuiltinMacros.GENERATED_TEST_ENTRY_POINT_PATH), context.lookupFileType(fileName: "sourcecode.swift")!,  /* shouldUsePrefixHeader */ false))
                     }
 
+                    if scope.evaluate(BuiltinMacros.GENERATE_PLAYGROUND_ENTRY_POINT) {
+                        result.append((scope.evaluate(BuiltinMacros.GENERATED_PLAYGROUND_ENTRY_POINT_PATH), context.lookupFileType(fileName: "sourcecode.swift")!,  /* shouldUsePrefixHeader */ false))
+                    }
+
                     return result
                 }())
 
