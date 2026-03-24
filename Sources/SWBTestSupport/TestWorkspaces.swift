@@ -933,6 +933,7 @@ package final class TestStandardTarget: TestInternalTarget, Sendable {
         case extensionKitExtension
         case xcodeExtension
         case unitTest
+        case swiftpmPlaygroundRunner
         case swiftpmTestRunner
         case uiTest
         case multiDeviceUITest
@@ -1032,6 +1033,7 @@ package final class TestStandardTarget: TestInternalTarget, Sendable {
                 return "\(name).app"
             case .commandLineTool,
                  .hostBuildTool,
+                 .swiftpmPlaygroundRunner,
                  .swiftpmTestRunner:
                 return "\(name)"
             case .framework,
