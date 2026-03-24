@@ -2,7 +2,7 @@
 //
 // This source file is part of the Swift open source project
 //
-// Copyright (c) 2025 Apple Inc. and the Swift project authors
+// Copyright (c) 2026 Apple Inc. and the Swift project authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //
 // See http://swift.org/LICENSE.txt for license information
@@ -32,7 +32,6 @@ class PlaygroundEntryPointGenerationTaskAction: TaskAction {
             struct Runner {
                 static func main() async {
                     await Playgrounds.__swiftPlayEntryPoint(CommandLine.arguments)
-                    print("Hello playground! It works!!")
                 }
             }
             """))
@@ -46,12 +45,5 @@ class PlaygroundEntryPointGenerationTaskAction: TaskAction {
 
     private struct Options: ParsableArguments {
         @Option var output: Path
-//        @Option var indexStoreLibraryPath: Path? = nil
-//        @Option() var linkerFilelist: [Path] = []
-//        @Option var indexStore: [Path] = []
-//        @Option var indexUnitBasePath: [Path] = []
-//        @Option var linkerFileListFormat: ResponseFileFormat = ResponseFileFormat.defaultValue
-//        @Flag var enableExperimentalTestOutput: Bool = false
-//        @Flag var discoverTests: Bool = false
     }
 }

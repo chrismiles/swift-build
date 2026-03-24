@@ -2,7 +2,7 @@
 //
 // This source file is part of the Swift open source project
 //
-// Copyright (c) 2025 Apple Inc. and the Swift project authors
+// Copyright (c) 2026 Apple Inc. and the Swift project authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
 //
 // See http://swift.org/LICENSE.txt for license information
@@ -26,7 +26,7 @@ final class PlaygroundEntryPointGenerationToolSpec: GenericCommandLineToolSpec, 
         PlaygroundEntryPointGenerationTaskAction()
     }
 
-    public func constructTasks(_ cbc: CommandBuildContext, _ delegate: any TaskGenerationDelegate, indexStorePaths: [Path], indexUnitBasePaths: [Path]) async {
+    public override func constructTasks(_ cbc: CommandBuildContext, _ delegate: any TaskGenerationDelegate) async {
         var commandLine = await commandLineFromTemplate(cbc, delegate, optionContext: nil)
 
         delegate.createTask(
