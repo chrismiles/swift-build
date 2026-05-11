@@ -99,6 +99,6 @@ struct UniversalPlatformTaskProducerExtension: TaskProducerExtension {
 
 struct UniversalPlatformTaskActionExtension: TaskActionExtension {
     var taskActionImplementations: [SWBUtil.SerializableTypeCode : any SWBUtil.PolymorphicSerializable.Type] {
-        [44: TestEntryPointGenerationTaskAction.self, 46: PlaygroundEntryPointGenerationTaskAction.self]
+        [44: TestEntryPointGenerationTaskAction.self, 47: PlaygroundEntryPointGenerationTaskAction.self]
     }
 }
